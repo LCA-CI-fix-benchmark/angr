@@ -477,9 +477,7 @@ class ReachingDefinitionsState:
             self.codeloc_uses.add(definition)
             self.live_definitions.add_memory_use_by_def(definition, self.codeloc, expr=expr)
 
-    def get_definitions(
-        self, atom: Union[Atom, Definition, Iterable[Atom], Iterable[Definition]]
-    ) -> Set[Definition]:
+    def get_definitions(self, atom: Union[Atom, Definition, Iterable[Atom], Iterable[Definition]]) -> Set[Definition]:
         return self.live_definitions.get_definitions(atom)
 
     def get_values(self, spec: Union[Atom, Definition, Iterable[Atom]]) -> Optional[MultiValues]:
