@@ -620,7 +620,6 @@ class LiveDefinitions:
         else:
             self.other_uses.add_use(definition, code_loc, expr)
 
-    @timethis
     def get_definitions(
         self, thing: Union[Atom, Definition[Atom], Iterable[Atom], Iterable[Definition[Atom]], MultiValues]
     ) -> Set[Definition[Atom]]:
